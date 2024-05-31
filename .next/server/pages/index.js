@@ -1,0 +1,96 @@
+"use strict";
+/*
+ * ATTENTION: An "eval-source-map" devtool has been used.
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+(() => {
+var exports = {};
+exports.id = "pages/index";
+exports.ids = ["pages/index"];
+exports.modules = {
+
+/***/ "./components/LogIn.js":
+/*!*****************************!*\
+  !*** ./components/LogIn.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/router */ \"next/router\");\n/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ \"styled-components\");\n/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _StyledButton__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./StyledButton */ \"./components/StyledButton.js\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"react/jsx-dev-runtime\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__);\nvar _jsxFileName = \"/Users/nadja/smavesto/robo-advisor/components/LogIn.js\";\n\n\n\n\n\n\nconst LogIn = () => {\n  const {\n    0: email,\n    1: setEmail\n  } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(\"\");\n  const {\n    0: password,\n    1: setPassword\n  } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(\"\");\n  const {\n    0: message,\n    1: setMessage\n  } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(\"\");\n  const router = (0,next_router__WEBPACK_IMPORTED_MODULE_1__.useRouter)();\n\n  const handleSubmit = async e => {\n    e.preventDefault();\n    setMessage(\"\");\n\n    try {\n      const response = await fetch(\"https://probetag.vercel.app/api/login\", {\n        method: \"POST\",\n        headers: {\n          \"Content-Type\": \"application/json\"\n        },\n        body: JSON.stringify({\n          email,\n          password\n        })\n      });\n\n      if (response.status === 200) {\n        const data = await response.json();\n        localStorage.setItem(\"token\", data.token);\n        router.push(\"/dashboard\");\n      } else if (response.status === 403) {\n        setMessage(\"Error: Invalid credentials\");\n      } else {\n        setMessage(\"Error: Something went wrong\");\n      }\n    } catch (error) {\n      console.error(\"Error during login:\", error);\n      setMessage(\"An error occurred during login\");\n    }\n  };\n\n  return /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxDEV)(Container, {\n    className: \"Login\",\n    children: [/*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxDEV)(\"h1\", {\n      children: \"Login\"\n    }, void 0, false, {\n      fileName: _jsxFileName,\n      lineNumber: 42,\n      columnNumber: 7\n    }, undefined), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxDEV)(\"form\", {\n      onSubmit: handleSubmit,\n      children: [/*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxDEV)(\"div\", {\n        children: [/*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxDEV)(\"label\", {}, void 0, false, {\n          fileName: _jsxFileName,\n          lineNumber: 45,\n          columnNumber: 11\n        }, undefined), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxDEV)(\"input\", {\n          type: \"email\",\n          placeholder: \"E-Mail\",\n          value: email,\n          onChange: e => setEmail(e.target.value),\n          required: true\n        }, void 0, false, {\n          fileName: _jsxFileName,\n          lineNumber: 46,\n          columnNumber: 11\n        }, undefined)]\n      }, void 0, true, {\n        fileName: _jsxFileName,\n        lineNumber: 44,\n        columnNumber: 9\n      }, undefined), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxDEV)(\"div\", {\n        children: [/*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxDEV)(\"label\", {}, void 0, false, {\n          fileName: _jsxFileName,\n          lineNumber: 55,\n          columnNumber: 11\n        }, undefined), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxDEV)(\"input\", {\n          type: \"password\",\n          placeholder: \"Passwort\",\n          value: password,\n          onChange: e => setPassword(e.target.value),\n          required: true\n        }, void 0, false, {\n          fileName: _jsxFileName,\n          lineNumber: 56,\n          columnNumber: 11\n        }, undefined)]\n      }, void 0, true, {\n        fileName: _jsxFileName,\n        lineNumber: 54,\n        columnNumber: 9\n      }, undefined), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxDEV)(_StyledButton__WEBPACK_IMPORTED_MODULE_3__[\"default\"], {\n        type: \"submit\",\n        children: \"Anmelden\"\n      }, void 0, false, {\n        fileName: _jsxFileName,\n        lineNumber: 64,\n        columnNumber: 9\n      }, undefined)]\n    }, void 0, true, {\n      fileName: _jsxFileName,\n      lineNumber: 43,\n      columnNumber: 7\n    }, undefined), message && /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxDEV)(\"p\", {\n      children: message\n    }, void 0, false, {\n      fileName: _jsxFileName,\n      lineNumber: 66,\n      columnNumber: 19\n    }, undefined)]\n  }, void 0, true, {\n    fileName: _jsxFileName,\n    lineNumber: 41,\n    columnNumber: 5\n  }, undefined);\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (LogIn);\nconst Container = styled_components__WEBPACK_IMPORTED_MODULE_2___default().div.withConfig({\n  displayName: \"LogIn__Container\",\n  componentId: \"sc-1k3lrlu-0\"\n})([\"max-width:400px;margin:0 auto;padding:1rem;border:1px solid #ccc;border-radius:5px;background-color:#012d2f;\"]);//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,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QkY7SUFBQTtNQUFBO01BQUE7TUFBQTtJQUFBLGFBRkYsRUF5Qkd2QixPQUFPLGlCQUFJO01BQUEsVUFBSUE7SUFBSjtNQUFBO01BQUE7TUFBQTtJQUFBLGFBekJkO0VBQUE7SUFBQTtJQUFBO0lBQUE7RUFBQSxhQURGO0FBNkJELENBL0REOztBQWlFQSxpRUFBZUwsS0FBZjtBQUVBLE1BQU02QixTQUFTLEdBQUcvQix1RUFBSDtFQUFBO0VBQUE7QUFBQSxvSEFBZiIsInNvdXJjZXMiOlsid2VicGFjazovL215LW5leHQtYXBwLy4vY29tcG9uZW50cy9Mb2dJbi5qcz8yOTU1Il0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IHVzZVN0YXRlIH0gZnJvbSBcInJlYWN0XCI7XG5pbXBvcnQgeyB1c2VSb3V0ZXIgfSBmcm9tIFwibmV4dC9yb3V0ZXJcIjtcbmltcG9ydCBzdHlsZWQgZnJvbSBcInN0eWxlZC1jb21wb25lbnRzXCI7XG5pbXBvcnQgQnV0dG9uIGZyb20gXCIuL1N0eWxlZEJ1dHRvblwiO1xuXG5jb25zdCBMb2dJbiA9ICgpID0+IHtcbiAgY29uc3QgW2VtYWlsLCBzZXRFbWFpbF0gPSB1c2VTdGF0ZShcIlwiKTtcbiAgY29uc3QgW3Bhc3N3b3JkLCBzZXRQYXNzd29yZF0gPSB1c2VTdGF0ZShcIlwiKTtcbiAgY29uc3QgW21lc3NhZ2UsIHNldE1lc3NhZ2VdID0gdXNlU3RhdGUoXCJcIik7XG4gIGNvbnN0IHJvdXRlciA9IHVzZVJvdXRlcigpO1xuXG4gIGNvbnN0IGhhbmRsZVN1Ym1pdCA9IGFzeW5jIChlKSA9PiB7XG4gICAgZS5wcmV2ZW50RGVmYXVsdCgpO1xuICAgIHNldE1lc3NhZ2UoXCJcIik7XG5cbiAgICB0cnkge1xuICAgICAgY29uc3QgcmVzcG9uc2UgPSBhd2FpdCBmZXRjaChcImh0dHBzOi8vcHJvYmV0YWcudmVyY2VsLmFwcC9hcGkvbG9naW5cIiwge1xuICAgICAgICBtZXRob2Q6IFwiUE9TVFwiLFxuICAgICAgICBoZWFkZXJzOiB7XG4gICAgICAgICAgXCJDb250ZW50LVR5cGVcIjogXCJhcHBsaWNhdGlvbi9qc29uXCIsXG4gICAgICAgIH0sXG4gICAgICAgIGJvZHk6IEpTT04uc3RyaW5naWZ5KHsgZW1haWwsIHBhc3N3b3JkIH0pLFxuICAgICAgfSk7XG5cbiAgICAgIGlmIChyZXNwb25zZS5zdGF0dXMgPT09IDIwMCkge1xuICAgICAgICBjb25zdCBkYXRhID0gYXdhaXQgcmVzcG9uc2UuanNvbigpO1xuICAgICAgICBsb2NhbFN0b3JhZ2Uuc2V0SXRlbShcInRva2VuXCIsIGRhdGEudG9rZW4pO1xuICAgICAgICByb3V0ZXIucHVzaChcIi9kYXNoYm9hcmRcIik7XG4gICAgICB9IGVsc2UgaWYgKHJlc3BvbnNlLnN0YXR1cyA9PT0gNDAzKSB7XG4gICAgICAgIHNldE1lc3NhZ2UoXCJFcnJvcjogSW52YWxpZCBjcmVkZW50aWFsc1wiKTtcbiAgICAgIH0gZWxzZSB7XG4gICAgICAgIHNldE1lc3NhZ2UoXCJFcnJvcjogU29tZXRoaW5nIHdlbnQgd3JvbmdcIik7XG4gICAgICB9XG4gICAgfSBjYXRjaCAoZXJyb3IpIHtcbiAgICAgIGNvbnNvbGUuZXJyb3IoXCJFcnJvciBkdXJpbmcgbG9naW46XCIsIGVycm9yKTtcbiAgICAgIHNldE1lc3NhZ2UoXCJBbiBlcnJvciBvY2N1cnJlZCBkdXJpbmcgbG9naW5cIik7XG4gICAgfVxuICB9O1xuXG4gIHJldHVybiAoXG4gICAgPENvbnRhaW5lciBjbGFzc05hbWU9XCJMb2dpblwiPlxuICAgICAgPGgxPkxvZ2luPC9oMT5cbiAgICAgIDxmb3JtIG9uU3VibWl0PXtoYW5kbGVTdWJtaXR9PlxuICAgICAgICA8ZGl2PlxuICAgICAgICAgIDxsYWJlbD48L2xhYmVsPlxuICAgICAgICAgIDxpbnB1dFxuICAgICAgICAgICAgdHlwZT1cImVtYWlsXCJcbiAgICAgICAgICAgIHBsYWNlaG9sZGVyPVwiRS1NYWlsXCJcbiAgICAgICAgICAgIHZhbHVlPXtlbWFpbH1cbiAgICAgICAgICAgIG9uQ2hhbmdlPXsoZSkgPT4gc2V0RW1haWwoZS50YXJnZXQudmFsdWUpfVxuICAgICAgICAgICAgcmVxdWlyZWRcbiAgICAgICAgICAvPlxuICAgICAgICA8L2Rpdj5cbiAgICAgICAgPGRpdj5cbiAgICAgICAgICA8bGFiZWw+PC9sYWJlbD5cbiAgICAgICAgICA8aW5wdXRcbiAgICAgICAgICAgIHR5cGU9XCJwYXNzd29yZFwiXG4gICAgICAgICAgICBwbGFjZWhvbGRlcj1cIlBhc3N3b3J0XCJcbiAgICAgICAgICAgIHZhbHVlPXtwYXNzd29yZH1cbiAgICAgICAgICAgIG9uQ2hhbmdlPXsoZSkgPT4gc2V0UGFzc3dvcmQoZS50YXJnZXQudmFsdWUpfVxuICAgICAgICAgICAgcmVxdWlyZWRcbiAgICAgICAgICAvPlxuICAgICAgICA8L2Rpdj5cbiAgICAgICAgPEJ1dHRvbiB0eXBlPVwic3VibWl0XCI+QW5tZWxkZW48L0J1dHRvbj5cbiAgICAgIDwvZm9ybT5cbiAgICAgIHttZXNzYWdlICYmIDxwPnttZXNzYWdlfTwvcD59XG4gICAgPC9Db250YWluZXI+XG4gICk7XG59O1xuXG5leHBvcnQgZGVmYXVsdCBMb2dJbjtcblxuY29uc3QgQ29udGFpbmVyID0gc3R5bGVkLmRpdmBcbiAgbWF4LXdpZHRoOiA0MDBweDtcbiAgbWFyZ2luOiAwIGF1dG87XG4gIHBhZGRpbmc6IDFyZW07XG4gIGJvcmRlcjogMXB4IHNvbGlkICNjY2M7XG4gIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzAxMmQyZjtcbmA7XG4iXSwibmFtZXMiOlsidXNlU3RhdGUiLCJ1c2VSb3V0ZXIiLCJzdHlsZWQiLCJCdXR0b24iLCJMb2dJbiIsImVtYWlsIiwic2V0RW1haWwiLCJwYXNzd29yZCIsInNldFBhc3N3b3JkIiwibWVzc2FnZSIsInNldE1lc3NhZ2UiLCJyb3V0ZXIiLCJoYW5kbGVTdWJtaXQiLCJlIiwicHJldmVudERlZmF1bHQiLCJyZXNwb25zZSIsImZldGNoIiwibWV0aG9kIiwiaGVhZGVycyIsImJvZHkiLCJKU09OIiwic3RyaW5naWZ5Iiwic3RhdHVzIiwiZGF0YSIsImpzb24iLCJsb2NhbFN0b3JhZ2UiLCJzZXRJdGVtIiwidG9rZW4iLCJwdXNoIiwiZXJyb3IiLCJjb25zb2xlIiwidGFyZ2V0IiwidmFsdWUiLCJDb250YWluZXIiLCJkaXYiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./components/LogIn.js\n");
+
+/***/ }),
+
+/***/ "./components/StyledButton.js":
+/*!************************************!*\
+  !*** ./components/StyledButton.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ \"styled-components\");\n/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);\n\nconst Button = styled_components__WEBPACK_IMPORTED_MODULE_0___default().button.withConfig({\n  displayName: \"StyledButton__Button\",\n  componentId: \"sc-12ub22b-0\"\n})([\"padding:0.5rem;border:none;border-radius:5px;background-color:#05a68f;color:white;cursor:pointer;&:hover{background-color:#005bb5;}\"]);\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Button);//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9jb21wb25lbnRzL1N0eWxlZEJ1dHRvbi5qcy5qcyIsIm1hcHBpbmdzIjoiOzs7Ozs7QUFBQTtBQUVBLE1BQU1DLE1BQU0sR0FBR0QsMEVBQUg7RUFBQTtFQUFBO0FBQUEsMklBQVo7QUFZQSxpRUFBZUMsTUFBZiIsInNvdXJjZXMiOlsid2VicGFjazovL215LW5leHQtYXBwLy4vY29tcG9uZW50cy9TdHlsZWRCdXR0b24uanM/ZjBmMyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgc3R5bGVkIGZyb20gXCJzdHlsZWQtY29tcG9uZW50c1wiO1xuXG5jb25zdCBCdXR0b24gPSBzdHlsZWQuYnV0dG9uYFxuICBwYWRkaW5nOiAwLjVyZW07XG4gIGJvcmRlcjogbm9uZTtcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDVhNjhmO1xuICBjb2xvcjogd2hpdGU7XG4gIGN1cnNvcjogcG9pbnRlcjtcblxuICAmOmhvdmVyIHtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDA1YmI1O1xuICB9XG5gO1xuZXhwb3J0IGRlZmF1bHQgQnV0dG9uO1xuIl0sIm5hbWVzIjpbInN0eWxlZCIsIkJ1dHRvbiIsImJ1dHRvbiJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./components/StyledButton.js\n");
+
+/***/ }),
+
+/***/ "./pages/index.js":
+/*!************************!*\
+  !*** ./pages/index.js ***!
+  \************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _components_LogIn__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/LogIn */ \"./components/LogIn.js\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"react/jsx-dev-runtime\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_1__);\nvar _jsxFileName = \"/Users/nadja/smavesto/robo-advisor/pages/index.js\";\n\n\n\nconst IndexPage = () => {\n  return /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxDEV)(\"div\", {\n    children: /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxDEV)(_components_LogIn__WEBPACK_IMPORTED_MODULE_0__[\"default\"], {}, void 0, false, {\n      fileName: _jsxFileName,\n      lineNumber: 6,\n      columnNumber: 7\n    }, undefined)\n  }, void 0, false, {\n    fileName: _jsxFileName,\n    lineNumber: 5,\n    columnNumber: 5\n  }, undefined);\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (IndexPage);//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9wYWdlcy9pbmRleC5qcy5qcyIsIm1hcHBpbmdzIjoiOzs7Ozs7OztBQUFBOzs7QUFFQSxNQUFNQyxTQUFTLEdBQUcsTUFBTTtFQUN0QixvQkFDRTtJQUFBLHVCQUNFLDhEQUFDLHlEQUFEO01BQUE7TUFBQTtNQUFBO0lBQUE7RUFERjtJQUFBO0lBQUE7SUFBQTtFQUFBLGFBREY7QUFLRCxDQU5EOztBQVFBLGlFQUFlQSxTQUFmIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vbXktbmV4dC1hcHAvLi9wYWdlcy9pbmRleC5qcz9iZWU3Il0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBMb2dJbiBmcm9tIFwiLi4vY29tcG9uZW50cy9Mb2dJblwiO1xuXG5jb25zdCBJbmRleFBhZ2UgPSAoKSA9PiB7XG4gIHJldHVybiAoXG4gICAgPGRpdj5cbiAgICAgIDxMb2dJbiAvPlxuICAgIDwvZGl2PlxuICApO1xufTtcblxuZXhwb3J0IGRlZmF1bHQgSW5kZXhQYWdlO1xuIl0sIm5hbWVzIjpbIkxvZ0luIiwiSW5kZXhQYWdlIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./pages/index.js\n");
+
+/***/ }),
+
+/***/ "next/router":
+/*!******************************!*\
+  !*** external "next/router" ***!
+  \******************************/
+/***/ ((module) => {
+
+module.exports = require("next/router");
+
+/***/ }),
+
+/***/ "react":
+/*!************************!*\
+  !*** external "react" ***!
+  \************************/
+/***/ ((module) => {
+
+module.exports = require("react");
+
+/***/ }),
+
+/***/ "react/jsx-dev-runtime":
+/*!****************************************!*\
+  !*** external "react/jsx-dev-runtime" ***!
+  \****************************************/
+/***/ ((module) => {
+
+module.exports = require("react/jsx-dev-runtime");
+
+/***/ }),
+
+/***/ "styled-components":
+/*!************************************!*\
+  !*** external "styled-components" ***!
+  \************************************/
+/***/ ((module) => {
+
+module.exports = require("styled-components");
+
+/***/ })
+
+};
+;
+
+// load runtime
+var __webpack_require__ = require("../webpack-runtime.js");
+__webpack_require__.C(exports);
+var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
+var __webpack_exports__ = (__webpack_exec__("./pages/index.js"));
+module.exports = __webpack_exports__;
+
+})();
