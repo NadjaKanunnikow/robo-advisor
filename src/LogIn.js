@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Login() {
+function Login({ onLogin }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
@@ -9,24 +9,30 @@ function Login() {
     e.preventDefault();
     setMessage("");
 
-    const response = await fetch("https://probetag.vercel.app/api/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email,
-        password,
-      }),
-    });
+    try {
+      const response = await fetch("https://probetag.vercel.app/api/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          password,
+        }),
+      });
 
-    if (response.status === 200) {
-      const data = await response.json();
-      setMessage(`Success! Token: ${data.token}`);
-    } else if (response.status === 403) {
-      setMessage("Error: Invalid credentials");
-    } else {
-      setMessage("Error: Something went wrong");
+      if (response.status === 200) {
+        const data = await response.json();
+        onLogin(data.token);
+        setMessage("Login successful");
+      } else if (response.status === 403) {
+        setMessage("Error: Invalid credentials");
+      } else {
+        setMessage("Error: Something went wrong");
+      }
+    } catch (error) {
+      console.error("Error during login:", error);
+      setMessage("An error occurred during login");
     }
   };
 
